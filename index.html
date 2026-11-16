@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STELLAR SPACE☭.ID</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial;overflow-x:hidden}
+#bintang{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.star{position:absolute;background:#fff;border-radius:50%;animation:kelip 2s infinite alternate}
+@keyframes kelip{0%{opacity:.2;transform:scale(.6)}100%{opacity:1;transform:scale(1.2);box-shadow:0 0 8px 2px #fff}}
+
+/* LUBANG HITAM - NEMPEL DI BELAKANG, IKUT GERAK */
+#bg{position:fixed;top:50%;left:50%;width:520px;height:520px;transform:translate(-50%,-50%);z-index:0;pointer-events:none;transition:transform .3s ease-out}
+.ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.9);filter:blur(1px);animation:putar 7s linear infinite}
+.ring2{position:absolute;inset:30px;border-radius:50%;border:10px solid rgba(255,255,255,.65);filter:blur(4px);animation:putar2 5s linear infinite}
+.hole{position:absolute;inset:70px;border-radius:50%;background:#000;box-shadow:0 0 80px 30px rgba(255,255,255,.45), inset 0 0 50px #000;border:3px solid #fff}
+.cahaya{position:absolute;top:50%;left:-60px;right:-60px;height:10px;background:linear-gradient(90deg,transparent,#fff,transparent);filter:blur(3px);transform:rotate(-8deg)}
+@keyframes putar{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.06)}100%{transform:rotate(360deg) scale(1)}}
+@keyframes putar2{0%{transform:rotate(0)}100%{transform:rotate(-360deg)}}
+
+.wrap{position:relative;z-index:2;padding:20px;max-width:480px;margin:0 auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.kecil{font-size:11px;letter-spacing:4px;color:#aaa}
+h1{font-size:54px;line-height:.95;margin:10px 0}
+p.desc{color:#ccc;font-size:14px;line-height:1.6}
+.btn{padding:13px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:14px;display:inline-block;margin:5px 0}
+.btn-putih{background:#fff;color:#000}
+.btn-hitam{background:rgba(0,0,0,.5);color:#fff;border:1px solid #666}
+h2{font-size:28px;margin:35px 0 10px}
+.kartu{background:rgba(20,20,20,.82);border:1px solid #333;border-radius:16px;padding:16px;margin:10px 0;backdrop-filter:blur(5px)}
+.kartu b{font-size:16px}
+.kartu p{font-size:13px;color:#bbb;line-height:1.6;margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid .kartu{margin:0}
+input,select{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none;background:#fff;color:#000}
+button{width:100%;padding:14px;background:#fff;color:#000;border:none;border-radius:30px;font-weight:bold;font-size:15px}
+.divisi{background:rgba(20,20,20,.85);border:1px solid #333;border-radius:16px;padding:15px;margin:10px 0}
+</style>
+</head>
+<body>
+
+<div id="bintang"></div>
+
+<!-- LUBANG HITAM BACKGROUND -->
+<div id="bg"><div class="ring"></div><div class="ring2"></div><div class="hole"></div><div class="cahaya"></div></div>
+
+<!-- PINTU -->
+<div id="pintu" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<div id="kiri" style="position:absolute;left:0;top:0;width:50%;height:100%;background:#111;border-right:2px solid #fff;display:flex;align-items:center;justify-content:flex-end;transition:1s"><span style="font-size:50px;margin-right:10px">🚪</span></div>
+<div id="kanan" style="position:absolute;right:0;top:0;width:50%;height:100%;background:#111;border-left:2px solid #fff;display:flex;align-items:center;justify-content:flex-start;transition:1s"><span style="font-size:50px;margin-left:10px">🚪</span></div>
+<div id="tombolPintu" style="position:relative;z-index:10;text-align:center;background:#000;padding:25px;border-radius:20px;border:1px solid #fff">
+<p style="font-size:60px;margin:0">🪐</p><h2 style="margin:5px">STELLAR SPACE</h2>
+<p style="color:#aaa;font-size:13px">Pintu galaksi masih ketutup...</p>
+<button onclick="bukaPintu()" style="background:#fff;color:#000;border:none;padding:15px 25px;border-radius:30px;font-weight:bold;width:100%">🔓 BUKA PINTU GALAKSI</button>
+</div>
+</div>
+
+<div class="wrap">
+<!-- HERO - PERSIS VIDEO -->
+<div class="hero">
+<p class="kecil">SISTEM ONLINE</p>
+<h1>STELLAR<br>SPACE☭.ID</h1>
+<p class="desc">Komunitas edukasi untuk belajar bersama. Gabung, bertanya, berbagi ilmu, dan bertumbuh bareng.</p>
+<div style="margin-top:15px">
+<a href="#pilih" class="btn btn-putih">Gabung sekarang</a>
+<a href="#tentang" class="btn btn-hitam">Tentang kami</a>
+</div>
+<p style="font-size:12px;color:#888;margin-top:15px">Goyang HP-mu. Lubang hitam di belakang ikut bergerak.</p>
+</div>
+
+<!-- TENTANG KAMI - PERSIS VIDEO -->
+<div id="tentang">
+<h2>Tentang kami</h2>
+<p class="desc">STELLAR SPACE☭.ID adalah wadah edukasi tempat anggota belajar bersama dan saling mendukung,Dibuat dengan 3 aliansi berbeda bukanlah penghalang tetapi pemersatu kita semua.</p>
+<div class="grid" style="margin-top:15px">
+<div class="kartu"><b>Edukasi</b><p>Materi, tips, dan informasi belajar yang disajikan rutin supaya semua anggota punya bekal yang sama.</p></div>
+<div class="kartu"><b>Belajar bersama</b><p>Diskusi dan sesi kelompok terbuka. Pemula dan yang sudah berpengalaman belajar di ruang yang sama.</p></div>
+</div>
+<div class="kartu"><b>Saling berbagi</b><p>Ada pertanyaan atau kesulitan? Tanyakan di komunitas. Anggota lain siap membantu.</p></div>
+</div>
+
+<!-- SALURAN -->
+<div class="kartu" style="border:2px solid #fff;text-align:center;margin-top:30px">
+<b style="font-size:18px">📢 SALURAN RESMI STELLAR</b>
+<p style="text-align:center">Info astronomi tiap hari, tanpa chat berisik.</p>
+<a href="https://whatsapp.com/channel/0029VbDnvJS77qVWMlc2qg0o" class="btn btn-putih" style="width:100%;text-align:center">📢 IKUTI SALURAN</a>
+</div>
+
+<!-- PILIH DIVISI -->
+<div id="pilih" class="kartu" style="margin-top:20px">
+<b style="font-size:18px">🎯 PILIH DIVISI LU</b>
+<p>Nama Panggilan</p>
+<input id="nama" placeholder="Contoh: Rizky">
+<p>Pilih Divisi</p>
+<select id="divisi">
+<option value="QTR">QTR☭TEAM - UTAMA 👑</option>
+<option value="AHE">AHE☭.ID - CABANG 01 ⚡</option>
+<option value="EIF">EIF☭.ID - CABANG 02 🌟</option>
+</select>
+<br><br>
+<button onclick="keGrup()">💬 MASUK GRUP DIVISI</button>
+<br><br>
+<button onclick="keSaluran()" style="background:#000;color:#fff;border:1px solid #fff">📢 MASUK SALURAN STELLAR</button>
+</div>
+
+<!-- GABUNG KE KOMUNITAS - PERSIS VIDEO -->
+<h2>Gabung ke komunitas</h2>
+<p class="desc">Masuk lewat link komunitas. Setelah masuk, baca aturan dan perkenalkan dirimu.</p>
+
+<div class="divisi">
+<b>Komunitas STELLAR</b>
+<p class="desc" style="margin:8px 0">Semua info, materi, dan diskusi ada di komunitas. Tekan tombol di bawah untuk masuk.</p>
+<a href="https://chat.whatsapp.com/IFIDcCMCpSaL9n8fCD1TPh" class="btn btn-putih" style="width:100%;text-align:center">Gabung ke komunitas</a>
+</div>
+
+<div class="divisi">
+<b>👑 QTR☭TEAM - UTAMA</b>
+<a href="https://chat.whatsapp.com/IFIDcCMCpSaL9n8fCD1TPh" class="btn btn-putih" style="width:100%;text-align:center;margin-top:8px">💬 GRUP QTR TEAM</a>
+</div>
+<div class="divisi">
+<b>⚡ AHE☭.ID - CABANG 01</b>
+<a href="https://chat.whatsapp.com/Et5Dh4ZOiHo3BqfLPYV6Xc" class="btn btn-putih" style="width:100%;text-align:center;margin-top:8px">💬 GRUP AHE.ID</a>
+</div>
+<div class="divisi">
+<b>🌟 EIF☭.ID - CABANG 02</b>
+<a href="https://chat.whatsapp.com/GH4zZNINwwT7b8VoKj7Mml" class="btn btn-putih" style="width:100%;text-align:center;margin-top:8px">💬 GRUP EIF.ID</a>
+</div>
+
+<!-- ATURAN - PERSIS VIDEO -->
+<h2>Aturan</h2>
+<div class="kartu">
+<p>• Hormati semua anggota, apa pun tingkat pengalamannya.</p><br>
+<p>• Tanya dengan jelas, jawab dengan sabar.</p><br>
+<p>• Tidak ada spam, promosi tanpa izin, atau konten SARA.</p><br>
+<p>• Bagikan apa yang kamu pelajari, sekecil apa pun.</p><br>
+<p>• No rusuh, No drama, No spam. Langgar = Kick.</p>
+</div>
+
+<!-- KONTAK -->
+<h2>Kontak developer</h2>
+<p class="desc">Menemukan kendala di portal ini atau punya saran? Hubungi kami.</p>
+<div class="kartu" style="display:flex;justify-content:space-between;align-items:center">
+<div><b>Developer</b><p>Email developer</p></div>
+<a href="https://whatsapp.com/channel/0029VbDnvJS77qVWMlc2qg0o" class="btn btn-putih" style="padding:8px 16px">Kirim pesan</a>
+</div>
+
+<p style="font-size:12px;color:#888;padding:30px 0;text-align:center">STELLAR SPACE☭.ID © 2026 - QTR☭TEAM<br>Satu Galaksi, Satu Frekuensi,Ciptakan Dunia Menjadi Menyenangkan.</p>
+</div>
+
+<script>
+function bukaPintu(){
+document.getElementById("kiri").style.left="-50%";
+document.getElementById("kanan").style.right="-50%";
+document.getElementById("tombolPintu").style.display="none";
+setTimeout(function(){document.getElementById("pintu").style.display="none";},1000);
+}
+function keGrup(){
+var nama=document.getElementById("nama").value;
+var divisi=document.getElementById("divisi").value;
+if(nama==""){alert("Isi dulu namanya bro!");return;}
+var link="";
+if(divisi=="QTR"){link="https://chat.whatsapp.com/IFIDcCMCpSaL9n8fCD1TPh";}
+if(divisi=="AHE"){link="https://chat.whatsapp.com/Et5Dh4ZOiHo3BqfLPYV6Xc";}
+if(divisi=="EIF"){link="https://chat.whatsapp.com/GH4zZNINwwT7b8VoKj7Mml";}
+window.open(link,"_blank");
+}
+function keSaluran(){
+var nama=document.getElementById("nama").value;
+if(nama==""){alert("Isi dulu namanya bro!");return;}
+window.open("https://whatsapp.com/channel/0029VbDnvJS77qVWMlc2qg0o","_blank");
+}
+// BINTANG KELAP KELIP
+var wadah=document.getElementById("bintang");
+for(var i=0;i<70;i++){
+var s=document.createElement("div");
+s.className="star";
+var uk=Math.random()*3+1;
+s.style.width=uk+"px";s.style.height=uk+"px";
+s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";
+s.style.animationDelay=(Math.random()*2)+"s";
+wadah.appendChild(s);
+}
+// LUBANG HITAM IKUT SCROLL + GOYANG HP + MOUSE + GERAK MEMUTAR - PERSIS VIDEO
+var bg=document.getElementById("bg");
+var baseX=-50, baseY=-50;
+function gerak(x,y){
+bg.style.transform="translate(calc(-50% + "+x+"px), calc(-50% + "+y+"px))";
+}
+window.addEventListener("scroll",function(){
+var y=window.scrollY*0.15;
+gerak(0,y);
+});
+window.addEventListener("deviceorientation",function(e){
+if(e.gamma && e.beta){
+gerak(e.gamma*1.8, e.beta*1.2);
+}
+});
+document.addEventListener("mousemove",function(e){
+var x=(e.clientX/window.innerWidth-0.5)*50;
+var y=(e.clientY/window.innerHeight-0.5)*50;
+gerak(x,y);
+});
+</script>
+</body>
+</html>
